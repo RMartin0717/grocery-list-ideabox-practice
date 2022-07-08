@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import AddItem from '../AddItem/AddItem'
+import YourList from '../YourList/YourList'
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +14,10 @@ class App extends Component {
     return (
       <>
         <h1>Grocery List</h1>
+        <AddItem />
+        <YourList
+          groceryListItems={this.state.groceryListItems}
+        />
       </>
     )
   }
