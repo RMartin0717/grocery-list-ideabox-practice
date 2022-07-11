@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { postItem } from '../../utilities/ApiCalls'
 
 class AddItem extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       name: '',
       amount: '',
@@ -23,7 +23,6 @@ class AddItem extends Component {
         name: this.state.name,
         amount: this.state.amount
       }
-      console.log(newItem)
       postItem(newItem)
       this.clearInputs()
     } else {
@@ -32,7 +31,10 @@ class AddItem extends Component {
   }
 
   clearInputs = () => {
-
+    this.setState({
+      name: '',
+      amount: ''
+    })
   }
   render() {
     return(
@@ -50,7 +52,7 @@ class AddItem extends Component {
           placeholder='amount'
           name='amount'
           value={this.state.amount}
-          onChange={(event)=> this.handleChange(event)}
+          onChange={(event) => this.handleChange(event)}
        />
        <button onClick={(event) => this.submitItem(event)}>Add Item to Grocery List</button>
       </form>
