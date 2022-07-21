@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Error from '../Error/Error'
 import { postItem } from '../../utilities/ApiCalls'
 
 class AddItem extends Component {
@@ -7,12 +8,16 @@ class AddItem extends Component {
     this.state = {
       name: '',
       amount: '',
-      error: null
+      error: ''
     }
   }
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value})
+  }
+
+  handleClick = (event) => {
+    this.submitItem(event)
   }
 
   submitItem = (event) => {
@@ -25,7 +30,8 @@ class AddItem extends Component {
       postItem(newItem)
       this.clearInputs()
     } else {
-      return
+      event.preventDefault()
+      this.setState({ error: 'Please input both a name and an amount'})
     }
   }
 
@@ -54,7 +60,10 @@ class AddItem extends Component {
           value={this.state.amount}
           onChange={(event) => this.handleChange(event)}
        />
-       <button onClick={(event) => this.submitItem(event)}>Add Item to Grocery List</button>
+       <button onClick={(event) => this.handleClick(event)}>Add Item to Grocery List</button>
+       {this.state.error &&
+         <Error error={this.state.error} />
+       }
       </form>
     )
   }
