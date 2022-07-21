@@ -54,7 +54,7 @@ class AddItem extends Component {
           onChange={(event) => this.handleChange(event)}
        />
        <input
-          type='number'
+          type='text'
           placeholder='amount'
           name='amount'
           value={this.state.amount}
