@@ -16,7 +16,6 @@ class AddItem extends Component {
   }
 
   submitItem = (event) => {
-    event.preventDefault()
     if (this.state.name && this.state.amount) {
       const newItem = {
         id: Date.now(),
@@ -36,6 +35,7 @@ class AddItem extends Component {
       amount: ''
     })
   }
+
   render() {
     return(
       <form className='add-item-form'>
