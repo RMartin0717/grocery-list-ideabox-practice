@@ -1,5 +1,5 @@
-describe('empty spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
+describe('main', () => {
+  it('displays the heading Grocery List', () => {
+    cy.visit('http://localhost:3000/')
   })
 })

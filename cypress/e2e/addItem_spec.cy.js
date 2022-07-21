@@ -1,5 +1,5 @@
-describe('empty spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
+describe('add item', () => {
+  it('displays the heading Add Item', () => {
+    cy.visit('https://localhost:3000/')
   })
 })
