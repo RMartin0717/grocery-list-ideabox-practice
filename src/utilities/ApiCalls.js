@@ -6,11 +6,24 @@ const postItem = (newItem) => {
     },
     body: JSON.stringify(newItem)
   })
+  .then(response => {
+      if(!response.ok) {
+        throw new Error('Unable to reach server data')
+      } else {
+        return response.json()
+      }
+    })
 }
 
 const getItems = () => {
   return fetch('http://localhost:3001/items')
-  .then(response => response.json())
+  .then(response => {
+    if(!response.ok) {
+      throw new Error('Unable to retrieve server data')
+    } else {
+      return response.json()
+    }
+  })
 }
 
 export { getItems, postItem }
