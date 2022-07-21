@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AddItem from '../AddItem/AddItem'
+import Error from '../Error/Error'
 import YourList from '../YourList/YourList'
 import { getItems } from '../../utilities/ApiCalls'
 
@@ -7,13 +8,15 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      groceryListItems: []
+      groceryListItems: [],
+      error: ''
     }
   }
 
   componentDidMount() {
     getItems()
       .then(data => this.setState({ groceryListItems: data }))
+      .catch(error => this.setState({ error: 'Unable to retrieve list' }))
   }
 
   render() {
@@ -24,6 +27,9 @@ class App extends Component {
         <YourList
           groceryListItems={this.state.groceryListItems}
         />
+        {this.state.error &&
+          <Error error={this.state.error} />
+        }
       </main>
     )
   }
