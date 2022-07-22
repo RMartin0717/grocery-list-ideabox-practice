@@ -1,4 +1,4 @@
-describe('add item', () => {
+describe('Add item', () => {
 
   beforeEach(() => {
 
@@ -11,7 +11,23 @@ describe('add item', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('displays the heading Add Item', () => {
-    
+  it('Should display the heading Add Item', () => {
+
+  })
+
+  it('Should have a controlled input field for name of item whose value reflects the data entered in the form', () => {
+
+  })
+
+  it('Should have a controlled input field for amount of item whose value reflects the data entered in the form', () => {
+
+  })
+
+  it('Should have a button to add the new item to the grocery list', () => {
+
+  })
+
+  it('Should display an error message when submit is clicked if input fields are not both filled out', () => {
+
   })
 })

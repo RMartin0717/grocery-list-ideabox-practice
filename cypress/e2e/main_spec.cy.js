@@ -1,4 +1,4 @@
-describe('main', () => {
+describe('Main', () => {
 
   beforeEach(() => {
 
@@ -11,7 +11,11 @@ describe('main', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('displays the heading Grocery List', () => {
+  it('Should display the heading Grocery List', () => {
+
+  })
+
+  it('Should display a server error message if unable to retrieve server data', () => {
 
   })
 })
