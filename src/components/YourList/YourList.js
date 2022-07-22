@@ -12,10 +12,12 @@ const YourList = ({ groceryListItems }) => {
   })
 
   return(
-    <section>
-      <h2>Your List</h2>
-      {itemList}
-    </section>
+    <div>
+      <h2 className='your-list-heading'>Your List</h2>
+      <section className='item-list'>
+        {itemList}
+      </section>
+    </div>
   )
 }
 

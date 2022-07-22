@@ -1,5 +1,7 @@
 describe('Add item', () => {
+
   describe('Happy Path', () => {
+
       beforeEach(() => {
         cy.fixture('listItems.json')
           .then(listItems => {
@@ -37,9 +39,10 @@ describe('Add item', () => {
           .get('form input[name="amount"]').type('1 carton')
           .get('.submit-item').click()
       })
-
   })
+  
   describe('Sad Path', () => {
+
     it('Should display an error message when submit is clicked if input fields are not both filled out', () => {
       cy.get('.submit-item').click()
         .get('.error').should('have.text', 'Please input both a name and an amount')
