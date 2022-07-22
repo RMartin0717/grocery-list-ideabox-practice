@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <h1>Grocery List</h1>
+        <h1 className='grocery-list-heading'>Grocery List</h1>
         <AddItem />
         <YourList
           groceryListItems={this.state.groceryListItems}
