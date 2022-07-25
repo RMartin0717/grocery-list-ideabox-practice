@@ -33,7 +33,15 @@ describe('Your list', () => {
       cy.intercept('DELETE', 'http://localhost:3001/items/:1', {
         statusCode: 200
       })
-      cy.get('.delete-item').eq(0).click()
+        .fixture('removedListItems.json')
+          .then(removedListItems => {
+            cy.intercept('GET', 'http://localhost:3001/items', {
+              statusCode: 200,
+              body: removedListItems
+            })
+          })
+        .get('.delete-item').eq(0).click()
+        .get('.item').should('have.lengthOf', 1)
     })
   })
 })

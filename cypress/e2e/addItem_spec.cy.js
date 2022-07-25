@@ -44,7 +44,7 @@ describe('Add item', () => {
                 })
               })
             .get('.submit-item').click()
-            .get('.item > h3').eq(2).should('have.text', 'celery')
+            .get('.item').should('have.lengthOf', 3)
       })
 
       describe('Sad Path', () => {
