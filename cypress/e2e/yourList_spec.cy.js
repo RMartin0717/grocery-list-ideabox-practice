@@ -30,7 +30,10 @@ describe('Your list', () => {
     })
 
     it('Should delete an item when the delete button is clicked', () => {
-
+      cy.intercept('DELETE', 'http://localhost:3001/items/:1', {
+        statusCode: 200
+      })
+      cy.get('.delete-item').eq(0).click()
     })
   })
 })

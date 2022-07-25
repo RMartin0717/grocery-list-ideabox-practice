@@ -26,7 +26,7 @@ const getItems = () => {
   })
 }
 
-const deleteItem(itemId) => {
+const removeItem = (itemId) => {
   return fetch((`http://localhost:3001/items/:${itemId}`), {
     method: 'DELETE'
   })
