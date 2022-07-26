@@ -5,7 +5,7 @@ const Item = ({ id, name, amount, deleteItem }) => {
     <article className='item' id={id}>
       <h3>{name}</h3>
       <h4>{amount}</h4>
-      <button onClick={() => deleteItem(id)}>x</button>
+      <button className={'delete-item'} onClick={(event) => deleteItem(id)}>x</button>
     </article>
   )
 }
