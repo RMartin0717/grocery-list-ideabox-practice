@@ -27,7 +27,7 @@ const getItems = () => {
 }
 
 const removeItem = (itemId) => {
-  return fetch((`http://localhost:3001/items/:${itemId}`), {
+  return fetch((`http://localhost:3001/items/${itemId}`), {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
@@ -42,4 +42,4 @@ const removeItem = (itemId) => {
     })
 }
 
-export { getItems, postItem }
+export { getItems, postItem, removeItem }

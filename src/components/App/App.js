@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AddItem from '../AddItem/AddItem'
 import Error from '../Error/Error'
 import YourList from '../YourList/YourList'
-import { getItems } from '../../utilities/ApiCalls'
+import { getItems, removeItem } from '../../utilities/ApiCalls'
 
 class App extends Component {
   constructor(props) {
@@ -19,8 +19,14 @@ class App extends Component {
       .catch(error => this.setState({ error: 'Unable to retrieve list' }))
   }
 
-  deleteItem(id) {
-    console.log('delete')
+  componentDidUpdate() {
+    getItems()
+      .then(data => this.setState({ groceryListItems: data }))
+      .catch(error => this.setState({ error: 'Unable to retrieve list' }))
+  }
+
+  deleteItem = (id) => {
+    removeItem(id)
   }
 
   render() {
