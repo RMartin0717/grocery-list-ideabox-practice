@@ -26,4 +26,20 @@ const getItems = () => {
   })
 }
 
-export { getItems, postItem }
+const removeItem = (itemId) => {
+  return fetch((`http://localhost:3001/items/${itemId}`), {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+      if(!response.ok) {
+        throw new Error('Unable to delete item. Try again.')
+      } else {
+        return response.json()
+      }
+    })
+}
+
+export { getItems, postItem, removeItem }

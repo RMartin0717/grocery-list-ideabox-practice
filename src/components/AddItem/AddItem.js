@@ -45,7 +45,7 @@ class AddItem extends Component {
   render() {
     return(
       <form className='add-item-form'>
-       <h2>Add Item</h2>
+       <h2 className='add-item'>Add Item</h2>
        <input
           type='text'
           placeholder='name'
@@ -54,13 +54,13 @@ class AddItem extends Component {
           onChange={(event) => this.handleChange(event)}
        />
        <input
-          type='number'
+          type='text'
           placeholder='amount'
           name='amount'
           value={this.state.amount}
           onChange={(event) => this.handleChange(event)}
        />
-       <button onClick={(event) => this.handleClick(event)}>Add Item to Grocery List</button>
+       <button onClick={(event) => this.handleClick(event)} className='submit-item'>Add Item to Grocery List</button>
        {this.state.error &&
          <Error error={this.state.error} />
        }

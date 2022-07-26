@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "waffles",
+    "amount": "3 boxes"
+  },
+  {
+    "id": 2,
+    "name": "carrots",
+    "amount": "10"
+  }
+]
