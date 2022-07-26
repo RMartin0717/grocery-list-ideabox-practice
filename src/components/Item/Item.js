@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Item = ({ name, amount }) => {
+const Item = ({ id, name, amount, deleteItem }) => {
   return (
-    <article className='item'>
+    <article className='item' id={id}>
       <h3>{name}</h3>
       <h4>{amount}</h4>
+      <button onClick={() => deleteItem(id)}>x</button>
     </article>
   )
 }

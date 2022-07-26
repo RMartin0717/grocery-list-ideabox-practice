@@ -28,7 +28,10 @@ const getItems = () => {
 
 const removeItem = (itemId) => {
   return fetch((`http://localhost:3001/items/:${itemId}`), {
-    method: 'DELETE'
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
   })
   .then(response => {
       if(!response.ok) {

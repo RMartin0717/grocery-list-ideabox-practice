@@ -19,6 +19,10 @@ class App extends Component {
       .catch(error => this.setState({ error: 'Unable to retrieve list' }))
   }
 
+  deleteItem(id) {
+    console.log('delete')
+  }
+
   render() {
     return (
       <main>
@@ -26,6 +30,7 @@ class App extends Component {
         <AddItem />
         <YourList
           groceryListItems={this.state.groceryListItems}
+          deleteItem={this.deleteItem}
         />
         {this.state.error &&
           <Error error={this.state.error} />

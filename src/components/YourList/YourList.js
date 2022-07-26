@@ -2,12 +2,14 @@
 import React from 'react'
 import Item from '../Item/Item'
 
-const YourList = ({ groceryListItems }) => {
+const YourList = ({ groceryListItems, deleteItem }) => {
   const itemList = groceryListItems.map(item => {
     return <Item
       name={item.name}
       amount={item.amount}
       key={item.id}
+      id={item.id}
+      deleteItem={deleteItem}
     />
   })
 
