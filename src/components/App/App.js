@@ -3,6 +3,7 @@ import AddItem from '../AddItem/AddItem'
 import Error from '../Error/Error'
 import YourList from '../YourList/YourList'
 import { getItems, removeItem } from '../../utilities/ApiCalls'
+import './App.css'
 
 class App extends Component {
   constructor(props) {
